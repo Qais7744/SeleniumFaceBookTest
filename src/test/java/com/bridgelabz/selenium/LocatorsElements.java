@@ -33,4 +33,22 @@ public class LocatorsElements {
         driver.quit();
     }
 
+    @Test
+    public void registerPartialLinkTest() throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Altamash\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        String baseUrl = "http://demo.guru99.com/test/newtours/";
+        driver.get(baseUrl);
+        String theLinkText = driver.findElement(By
+                                   .partialLinkText("egis"))
+                                   .getText();
+        System.out.println(theLinkText);
+        theLinkText = driver.findElement(By
+                            .partialLinkText("EGIS"))
+                            .getText();
+        System.out.println(theLinkText);
+        Thread.sleep(3000);
+        driver.quit();
+    }
+
 }
