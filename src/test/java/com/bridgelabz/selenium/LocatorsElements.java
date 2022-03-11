@@ -20,4 +20,17 @@ public class LocatorsElements {
         driver.quit();
     }
 
+    @Test
+    public void partiallinkTest() throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Altamash\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+
+        String baseUrl = "http://demo.guru99.com/test/link.html";
+        driver.get(baseUrl);
+        driver.findElement(By.partialLinkText("click here")).click();
+        System.out.println("title of page is: " + driver.getTitle());
+        Thread.sleep(3000);
+        driver.quit();
+    }
+
 }
