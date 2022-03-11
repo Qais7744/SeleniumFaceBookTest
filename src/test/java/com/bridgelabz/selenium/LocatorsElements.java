@@ -51,4 +51,21 @@ public class LocatorsElements {
         driver.quit();
     }
 
+    @Test
+    public void insideAndOutside() throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Altamash\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        String baseUrl = "http://demo.guru99.com/test/block.html";
+        driver.get(baseUrl);
+
+        driver.findElement(By.partialLinkText("Inside")).click();
+        System.out.println(driver.getTitle());
+        driver.navigate().back();
+
+        driver.findElement(By.partialLinkText("Outside")).click();
+        System.out.println(driver.getTitle());
+        Thread.sleep(3000);
+        driver.quit();
+    }
+    
 }
