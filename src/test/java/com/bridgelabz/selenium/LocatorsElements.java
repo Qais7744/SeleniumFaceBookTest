@@ -19,7 +19,5 @@ public class LocatorsElements {
         Thread.sleep(3000);
         driver.quit();
     }
-
-
-
+    
 }
